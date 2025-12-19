@@ -86,7 +86,7 @@ def evaluate_clarity(state: UPSCState) -> dict[str, str | list[int]]:
     output = structured_model.invoke(prompt)
     return {
         # pyright: ignore[reportAttributeAccessIssue]
-        "clarity_feedback": output.feedback,
+        "clarity_feedback": output.feedback,  # type: ignore
         "indivitual_scores": [output.score]  # type: ignore
     }
 
